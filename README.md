@@ -1,24 +1,40 @@
----> Descrição
+# Automação de Preenchimento de Formulário com PyAutoGUI
 
-Este projeto é um bot automatizado em Python que utiliza a biblioteca pyautogui para preencher e enviar dados de um arquivo .csv diretamente para um site. Ele é ideal para situações onde há necessidade de cadastrar 
-vários produtos manualmente, otimizando o processo e minimizando erros.
+Este projeto utiliza a biblioteca `PyAutoGUI` para automatizar o processo de preenchimento de um formulário web, baseado em dados de um arquivo CSV. A automação simula ações como digitação, cliques e navegação, economizando tempo e reduzindo erros manuais.
 
+## Tecnologias Utilizadas
 
----> Funcionalidades
+- **Python**
+- **PyAutoGUI**: Automação de tarefas
+- **Pandas**: Manipulação e leitura de arquivos CSV
+- **Time**: Controle de pausas durante a execução
 
-Automação de Login: Faz login automático no site com credenciais predefinidas.
-Cadastro de Produtos: Lê dados de um arquivo .csv e preenche campos no formulário do site.
-Suporte a Campos Diversos: Inclui campos como código, marca, tipo, categoria, preço unitário, custo e observações.
-Validação de Dados: Verifica se há dados disponíveis antes de preencher o campo.
+## Objetivo
 
+Automatizar o processo de login em um site e o preenchimento de campos de formulário com dados fornecidos em um arquivo `produtos.csv`. A automação realiza:
+- Login no sistema.
+- Preenchimento de campos como código, marca, tipo, categoria, preço unitário, custo e observações.
+- Submissão de cada formulário e repetição para todos os registros do arquivo.
 
----> Atenção
+## Estrutura do Código
 
-Site de Estudo: O projeto utiliza um site criado exclusivamente para fins de aprendizado, onde qualquer login e senha funcionarão. Portanto, o script não representa riscos de segurança.
-Resolução de Tela: Certifique-se de que o layout do site corresponde às coordenadas especificadas no script.
-Delays: O tempo de espera (time.sleep) pode precisar de ajustes dependendo da velocidade do carregamento do site no seu computador.
+### 1. Configuração Inicial
+- **Definição de pausas automáticas** com `pyautogui.PAUSE`.
+- Navegação para o navegador e o site especificado.
 
+### 2. Login Automático
+- Preenchimento dos campos de login e senha utilizando coordenadas específicas de clique e ações de teclado.
 
----> Licença
+### 3. Leitura do Arquivo CSV
+- O arquivo `produtos.csv` contém os dados a serem inseridos no formulário.
 
-Este projeto é de uso livre e foi desenvolvido exclusivamente para fins de aprendizado e demonstração. Sinta-se à vontade para utilizá-lo, adaptá-lo ou melhorá-lo.
+### 4. Preenchimento Automático
+- Para cada linha do arquivo, os campos são preenchidos automaticamente com as informações correspondentes, como:
+  - Código do produto
+  - Marca
+  - Tipo
+  - Categoria
+  - Preço unitário
+  - Custo
+  - Observações (quando disponíveis)
+- O formulário é submetido após o preenchimento.
